@@ -11,8 +11,12 @@ resource "aws_route53_zone" "aws_sub_zone" {
 
   tags = {
     name        = var.namespace
-    owner       = var.owner
     created-by  = var.created-by
+    owner       = var.owner
+    se-region   = var.se-region
+    purpose     = var.purpose
+    ttl         = var.ttl
+    terraform   = var.terraform
   }
 }
 
@@ -38,8 +42,12 @@ resource "aws_route53_zone" "azure_sub_zone" {
 
   tags = {
     name        = var.namespace
-    owner       = var.owner
     created-by  = var.created-by
+    owner = var.owner
+    se-region = var.se-region
+    purpose = var.purpose
+    ttl = var.ttl
+    terraform = var.terraform
   }
 }
 
@@ -65,9 +73,13 @@ resource "aws_route53_zone" "gcp_sub_zone" {
   force_destroy = false
   tags = {
     name           = var.namespace
-    owner          = var.owner
     created-by     = var.created-by
- }
+    owner = var.owner
+    se-region = var.se-region
+    purpose = var.purpose
+    ttl = var.ttl
+    terraform = var.terraform
+  }
 }
 
  resource "aws_route53_record" "gcp_sub_zone" {

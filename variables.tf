@@ -29,6 +29,22 @@ variable "aws_region" {
   default     = "eu-west-2"
 }
 
+variable "se-region" {
+    description = ""
+}
+
+variable "purpose" {
+    description = ""
+}
+
+variable "ttl" {
+    description = ""
+}
+
+variable "terraform" {
+    description = ""
+}
+
 # Azure
 
 variable "create_azure_dns_zone" {
